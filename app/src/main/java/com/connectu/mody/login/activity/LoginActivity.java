@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-import com.connectu.mody.MainActivity;
+import com.connectu.mody.main.activity.MainActivity;
 import com.connectu.mody.R;
 import com.connectu.mody.login.controller.SharedPreferenceController;
 
