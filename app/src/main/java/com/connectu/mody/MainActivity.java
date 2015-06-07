@@ -1,11 +1,9 @@
-package com.connectu.mody.main.activity;
+package com.connectu.mody;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import com.connectu.mody.R;
 
 
 public class MainActivity extends ActionBarActivity {
