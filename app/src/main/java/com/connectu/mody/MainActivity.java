@@ -1,4 +1,4 @@
-package com.connectu.mody_android;
+package com.connectu.mody;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;

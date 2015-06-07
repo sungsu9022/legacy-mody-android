@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.connectu.mody_android"
+        applicationId "com.connectu.mody"
         minSdkVersion 15
         targetSdkVersion 22
         versionCode 1

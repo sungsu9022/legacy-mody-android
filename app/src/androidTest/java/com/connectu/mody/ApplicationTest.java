@@ -1,4 +1,4 @@
-package com.connectu.mody_android;
+package com.connectu.mody;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
