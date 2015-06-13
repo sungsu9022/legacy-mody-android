@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:layout_weight="0.91"
+    android:gravity="center|right"
+    android:background="#999999">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:layout_weight="0.91">
+
+            <ImageButton
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/logo_button"
+                android:background="@drawable/main_app"
+                android:layout_marginRight="5dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/page_title"
+                android:gravity="center_vertical"
+                android:layout_gravity="center"
+                android:text="조각모음"
+                android:textIsSelectable="false"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <ImageButton
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/search_button"
+            android:background="@drawable/main_search_icon"/>
+
+        <ImageButton
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/setting_button"
+            android:background="@drawable/main_setting_icon"
+            android:layout_marginLeft="10dp" />
+
+</LinearLayout>
