@@ -1,0 +1,19 @@
+<resources>
+
+    <string-array name="settingList">
+        <item>Samsung</item>
+        <item>Hyundai</item>
+        <item>LG</item>
+        <item>SK</item>
+        <item>KIA</item>
+    </string-array>
+
+    <string-array name="settingCommentList">
+        <item>I love Samsung</item>
+        <item>I love Hyundai</item>
+        <item>I love LG</item>
+        <item>I love SK</item>
+        <item>I love KIA</item>
+    </string-array>
+
+</resources>
