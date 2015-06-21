@@ -1,38 +1,32 @@
 package com.connectu.mody.main.activity;
-//package com.connectu.mody.setting.activity;
 
 import android.app.Activity;
+import android.app.ListActivity;
+import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.app.Activity;
-import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.connectu.mody.R;
 import com.connectu.mody.setting.activity.SettingActivity;
+import java.util.ArrayList;
 
 
-public class MainActivity extends Activity {
-
+public class MainActivity extends ListActivity {
     ImageButton settingButton;
-    ImageView iv;
-    TextView tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // xml에 불러온 이미뷰를 bt에 넣어 속성사용 하기위한 구문
+
         settingButton = (ImageButton)findViewById(R.id.setting_button);
-        // 버튼에 클릭이벤트 처리
-        //bt.setOnClickListener((OnClickListener) this);
 
         settingButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -40,18 +34,53 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(MainActivity.this, SettingActivity.class));
             }
         });
+
+        ArrayList<Mody> modyList = new ArrayList<>();
+
+        for(int i = 0; i < 5; i++) {
+            Mody mody = new Mody("Make a Party Tonight!","Dongwon Lee", 0);
+            modyList.add(mody);
+        }
+
+        ModyAdapter modyAdapter = new ModyAdapter(this, R.layout.item_row, modyList);
+        setListAdapter(modyAdapter);
     }
 
-    /*@Override
-    public void onClick(View arg0) {
-        // TODO Auto-generated method stub
-        switch (arg0.getId()) {
-            case R.id.setting_button:
-                // 이미지뷰에 사진을 출력하는 구문
-                iv.setImageResource(R.drawable.main_setting_icon);
-                // 텍스트뷰에 문자열 출력하는 구문
-                tv.setText("setting");
-                break;
+    private class ModyAdapter extends ArrayAdapter<Mody> {
+
+        private ArrayList<Mody> modies;
+
+        public ModyAdapter(Context context, int textViewResourceId, ArrayList<Mody> modies) {
+            super(context, textViewResourceId, modies);
+            this.modies = modies;
         }
-    }*/
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View v = convertView;
+            if (v == null) {
+                LayoutInflater vi = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                v = vi.inflate(R.layout.mody_row, null);
+            }
+            Mody mody = modies.get(position);
+            if (mody != null) {
+                TextView topText = (TextView) v.findViewById(R.id.toptext);
+                TextView bottomText = (TextView) v.findViewById(R.id.bottomtext);
+                ImageView photo = (ImageView) v.findViewById(R.id.photo);
+                int photoId = mody.getPhotoId();
+                if (topText != null){
+                    topText.setText(mody.getModyName());
+                }
+                if(bottomText != null){
+                    bottomText.setText(mody.getUserInfo());
+                }
+                if (photoId != 0) {
+                    ((ImageView)v.findViewById(R.id.photo)).setImageResource(mody.getPhotoId());
+                }
+                /*else {
+                    ((ImageView)v.findViewById(R.id.photo)).setImageResource(R.drawable.nophoto);
+                }*/
+            }
+            return v;
+        }
+    }
 }
