@@ -1,21 +1,27 @@
 package com.connectu.mody.setting.activity;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.connectu.mody.R;
+import com.connectu.mody.main.activity.MainActivity;
 
 import java.util.ArrayList;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 public class SettingActivity extends ListActivity {
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,7 +42,6 @@ public class SettingActivity extends ListActivity {
 
         SettingAdapter settingAdapter = new SettingAdapter(this, R.layout.item_row, settingMenuList);
         setListAdapter(settingAdapter);
-
     }
 
     private class SettingAdapter extends ArrayAdapter<SettingMenu> {
@@ -65,7 +70,36 @@ public class SettingActivity extends ListActivity {
                     bottomText.setText(menu.getComment());
                 }
             }
+            v.setOnClickListener(new Button.OnClickListener(){
+                public void onClick(View v){
+                    dialogSelectOption();
+                }
+            });
+
             return v;
+        }
+
+        private void dialogSelectOption() {
+            final String items[] = { "item1", "item2", "item3" };
+            AlertDialog.Builder ab = new AlertDialog.Builder(SettingActivity.this);
+            ab.setTitle("Title");
+            ab.setSingleChoiceItems(items, 0,
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            // 각 리스트를 선택했을때
+                        }
+                    }).setPositiveButton("Ok",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            // OK 버튼 클릭시 , 여기서 선택한 값을 메인 Activity 로 넘기면 된다.
+                        }
+                    }).setNegativeButton("Cancel",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            // Cancel 버튼 클릭시
+                        }
+                    });
+            ab.show();
         }
     }
 }
