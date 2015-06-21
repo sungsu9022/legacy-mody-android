@@ -2,6 +2,7 @@ package com.connectu.mody.main.activity;
 //package com.connectu.mody.setting.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,6 +16,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.connectu.mody.R;
+import com.connectu.mody.setting.activity.SettingActivity;
 
 
 public class MainActivity extends Activity {
@@ -35,7 +37,7 @@ public class MainActivity extends Activity {
         settingButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(R.layout.activity_setting);
+                startActivity(new Intent(MainActivity.this, SettingActivity.class));
             }
         });
     }
