@@ -88,6 +88,7 @@ public class SettingActivity extends ListActivity {
                         public void onClick(DialogInterface dialog, int whichButton) {
                             // 각 리스트를 선택했을때
                         }
+
                     }).setPositiveButton("Ok",
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int whichButton) {
