@@ -44,6 +44,10 @@
             android:label="@string/title_activity_setting" >
         </activity>
         <activity
+            android:name=".specificview.activity.SpecificViewActivity"
+            android:label="@string/title_activity_specificview" >
+        </activity>
+        <activity
             android:name=".category.activity.SelectCategoryActivity"
             android:label="@string/title_activity_select_category" >
         </activity>
