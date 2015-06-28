@@ -1,6 +1,5 @@
 package com.connectu.mody.main.activity;
 
-import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
@@ -14,29 +13,41 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.connectu.mody.R;
+import com.connectu.mody.category.activity.SelectCategoryActivity;
+import com.connectu.mody.main.model.Mody;
 import com.connectu.mody.setting.activity.SettingActivity;
 import java.util.ArrayList;
 
 
 public class MainActivity extends ListActivity {
-    ImageButton settingButton;
+    private ImageButton settingButton;
+    private ImageButton addCategoryButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // 설정 버튼
         settingButton = (ImageButton)findViewById(R.id.setting_button);
-
         settingButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, SettingActivity.class));
             }
         });
+        
+        // 카테고리 추가 버튼
+        addCategoryButton = (ImageButton)findViewById(R.id.add_category_button);
+        addCategoryButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SelectCategoryActivity.class));
+            }
+        });
 
+        // Mody List
         ArrayList<Mody> modyList = new ArrayList<>();
-
         for(int i = 0; i < 5; i++) {
             Mody mody = new Mody("Make a Party Tonight!","Dongwon Lee", 0);
             modyList.add(mody);

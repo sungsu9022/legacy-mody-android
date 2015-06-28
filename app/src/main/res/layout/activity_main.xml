@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:weightSum="1"
@@ -24,10 +25,13 @@
             android:orientation="horizontal"
             android:background="#888888">
 
-            <include
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                layout="@layout/category_item" />
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/add_category_button"
+                android:background="@drawable/category_add_button"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_vertical" />
         </LinearLayout>
 
         <ListView

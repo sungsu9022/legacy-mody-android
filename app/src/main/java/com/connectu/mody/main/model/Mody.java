@@ -1,10 +1,10 @@
-package com.connectu.mody.main.activity;
+package com.connectu.mody.main.model;
 
 /**
  * Created by Bono on 2015-06-13.
  */
 
-class Mody {
+public class Mody {
 
     private String modyName;
     private String userInfo;

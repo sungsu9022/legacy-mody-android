@@ -12,6 +12,7 @@
     <string name="agreementBtnLayout">회원가입동의레이아웃</string>
     <string name="userFormTitleLayout">회원가입력레이아웃</string>
     <string name="title_activity_setting">SettingActivity</string>
+    <string name="title_activity_select_category">SelectCategoryActivity</string>
 
     <string name="hello_world">Hello world!</string>
 
