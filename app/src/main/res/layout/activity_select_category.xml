@@ -3,48 +3,86 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <include
-        android:id="@+id/gnb_layout"
+    
+    <TableLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        layout="@layout/layout_gnb"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="0.91" />
+        android:id="@+id/categoryTableLayout">
 
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent">
 
-        <include
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            layout="@layout/category_item" />
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+           <include
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               layout="@layout/category_item" />
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                layout="@layout/category_item" />
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                layout="@layout/category_item" />
+        </TableRow>
 
-        <include
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            layout="@layout/category_item" />
+        <TableRow
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                layout="@layout/category_item" />
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                layout="@layout/category_item" />
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                layout="@layout/category_item" />
+        </TableRow>
 
-        <include
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            layout="@layout/category_item" />
+        <TableRow
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                layout="@layout/category_item" />
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                layout="@layout/category_item" />
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                layout="@layout/category_item" />
+        </TableRow>
 
-        <include
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            layout="@layout/category_item" />
 
-        <include
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            layout="@layout/category_item" />
-
-        <include
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            layout="@layout/category_item" />
     </TableLayout>
-
 </LinearLayout>
